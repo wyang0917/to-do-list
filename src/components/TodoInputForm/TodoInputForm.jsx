@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-function TodoInputForm({addTodo,toggleTodo}){
+function TodoInputForm(props){
+  const {addTodo} = props
   const [inputText,setInputText] = useState('')
   
   const handleInput=(event)=>{

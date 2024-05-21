@@ -1,7 +1,8 @@
 import React from 'react'
 import './TodoListItem.css'
 
-function TodoListItem({todo,toggleTodo,removeTodo}){
+function TodoListItem(props){
+  const {todo,toggleTodo,removeTodo} = props
   const todoClass = todo.isCompleted ? 'completed' :'not-completed'
   return(
     <li>

@@ -1,8 +1,8 @@
 import React from 'react'
-import TodoListItem from '../TodoListItem/TodoListItem'
+import TodoListItem from './TodoListItem/TodoListItem'
 
-function TodoList({todos,toggleTodo,removeTodo}){
-
+function TodoList(props){
+  const {todos,toggleTodo,removeTodo} = props
   return(
     <ul>
       {todos.map((todo)=>(

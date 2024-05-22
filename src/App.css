@@ -10,7 +10,8 @@
   font-size: 18px;
 }
 
-.h1{
+/* 不会用h1等html tag来命名 className。 要meaningful。这里可以个appHeader。这样一下就知道大概什么位置，干什么的 */
+.h1{ 
   margin: 40px 0;
   font-weight: 600;
 }

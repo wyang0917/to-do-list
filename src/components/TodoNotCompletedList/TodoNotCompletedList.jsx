@@ -1,5 +1,7 @@
 import React from "react";
 
+// TodoNotCompletedList 和 TodoCompletedList 也是相同的structure
+// 建议写成一个通用的component 然后pass想要的props就好了
 function TodoNotCompletedList(props){
   const {hideNotCompleted,todos} = props
   const notCompletedTodos = todos.filter((todo)=>(todo.isCompleted===false))

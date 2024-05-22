@@ -1,47 +1,36 @@
-import React, {useState} from 'react'
-import './TodoInputForm.css'
+import React, { useState } from "react";
+import "./TodoInputForm.css";
 
-function TodoInputForm(props){
-  const {addTodo} = props
-  const [inputText,setInputText] = useState('')
-  
-  const handleInput=(event)=>{
-    event.preventDefault()
-    if(inputText){
-      addTodo(inputText)
-      setInputText('')
-    }
-  } 
+// 我整体format了一下
+function TodoInputForm(props) {
+    const { addTodo } = props;
+    const [inputText, setInputText] = useState("");
 
-  return(
-    <form className='form' onSubmit={handleInput}>
-      <input className='input'
-      value={inputText} 
-      type="text" 
-      placeholder='Please, enter your todo item'
-      onChange={(event)=>setInputText(event.target.value)}/>
-      <button className='button'
-      type='submit'>Add</button>
-    </form>
-  )
+    const handleInput = (event) => {
+        event.preventDefault();
+        if (inputText) {
+            addTodo(inputText);
+            setInputText("");
+        }
+    };
+
+    return (
+        <form className="form" onSubmit={handleInput}>
+            <input
+                className="input"
+                value={inputText}
+                type="text"
+                placeholder="Please, enter your todo item"
+                onChange={(event) => setInputText(event.target.value)}
+            />
+            <button className="button" type="submit">
+                Add
+            </button>
+        </form>
+    );
 }
 
-export default TodoInputForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default TodoInputForm;
 
 // import React,{useState} from "react"
 // import {v4 as uuidv4} from 'uuid'
@@ -58,9 +47,9 @@ export default TodoInputForm
 //   return(
 //       <>
 //       {/* input中的onChange事件，onChange={(event)=>setText(event.target.value)，setText接收onChange里的value，再传递给text} */}
-//       <input 
-//       value={inputText} 
-//       placeholder= 'enter your todo' 
+//       <input
+//       value={inputText}
+//       placeholder= 'enter your todo'
 //       onChange={(event)=>setInputText(event.target.value)}></input>
 //       {/* button中onClick事件,通过spread operator把input中的todo字符串添加到todos，清空input */}
 //       <button onClick={handleInputTodo}>

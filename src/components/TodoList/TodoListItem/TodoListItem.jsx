@@ -17,6 +17,6 @@ function TodoListItem(props){
       <button onClick={()=>editTodo(todo.id)}>Edit</button>
     </li>
   )
-} 
+}
 
 export default TodoListItem

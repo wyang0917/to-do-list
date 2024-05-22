@@ -5,6 +5,7 @@ import TodoInputForm from "./components/TodoInputForm";
 import TodoList from "./components/TodoList";
 import TodoFilter from "./components/TodoFilter"
 import TodoCompletedList from "./components/TodoCompletedList";
+import TodoNotCompletedList from "./components/TodoNotCompletedList";
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
       <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} editTodo={editTodo}/>
       <TodoFilter showCompleted={showCompleted} showNotCompleted={showNotCompleted}/>
       {completed && <TodoCompletedList hideCompleted={hideCompleted} todos={todos}/>}
-
+      {notCompleted && <TodoNotCompletedList hideNotCompleted={hideNotCompleted} todos={todos}/>}
     </div>
   )
   

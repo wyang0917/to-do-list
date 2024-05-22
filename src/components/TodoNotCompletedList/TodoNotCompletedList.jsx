@@ -6,11 +6,16 @@ function TodoNotCompletedList(props){
   return(
     <div>
           <h2>Not Completed List</h2>
-          <ul>
+          {notCompletedTodos.length > 0 ?
+          (<ul>
             {notCompletedTodos.map((todo)=>(
               <li key={todo.id}>{todo.text}</li>
             ))}
-          </ul>
+          </ul>):(
+            <p>You finish all!</p>
+          )
+          }
+          
           <button onClick={hideNotCompleted}>hide</button>
     </div>
   )

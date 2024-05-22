@@ -1,0 +1,29 @@
+.form{
+  margin: 0 auto 30px;
+  width: 80%;
+  box-sizing: border-box;
+}
+.input{
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 60%;
+  outline: none;
+  padding: 0 1em;
+}
+.button{
+  border: none;
+  margin-left: 20px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color:lightblue;
+  transition: all 0.5s ease;
+}
+.button.button:hover{
+  cursor: pointer;
+}
+.button:active{
+  transform: scale(1.05);
+}

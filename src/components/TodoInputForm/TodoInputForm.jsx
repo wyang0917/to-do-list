@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './TodoInputForm.css'
 
 function TodoInputForm(props){
   const {addTodo} = props
@@ -13,13 +14,13 @@ function TodoInputForm(props){
   } 
 
   return(
-    <form onSubmit={handleInput}>
-      <input
+    <form className='form' onSubmit={handleInput}>
+      <input className='input'
       value={inputText} 
       type="text" 
       placeholder='Please, enter your todo item'
       onChange={(event)=>setInputText(event.target.value)}/>
-      <button 
+      <button className='button'
       type='submit'>Add</button>
     </form>
   )

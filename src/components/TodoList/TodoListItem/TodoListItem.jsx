@@ -5,7 +5,7 @@ function TodoListItem(props){
   const {todo,toggleTodo,removeTodo,editTodo} = props
   const todoClass = todo.isCompleted ? 'completed' :'not-completed'
   return(
-    <li>
+    <li className='li'>
       <input 
       type="checkbox" 
       checked={todo.isCompleted}

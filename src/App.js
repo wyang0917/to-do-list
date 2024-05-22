@@ -25,7 +25,16 @@ function App() {
     const newTodos = [...todos].filter((todo)=>todo.id!==idToRemove)
     setTodos([...newTodos]);
   };
-
+  const editTodo = (idToEdit)=>{
+    const editTodo = [...todos].find((todo)=>todo.id===idToEdit)
+    const editText = prompt('Please edit your todo',editTodo.text)
+    if(editText){
+      const updateTodo = {...editTodo,text:editText}
+      const updateTodos = todos.map((todo)=>todo.id===idToEdit ? updateTodo : todo)
+    setTodos(updateTodos)
+    }
+    
+  }
   const showCompleted = ()=>{
     setCompleted(true)
   }
@@ -37,7 +46,7 @@ function App() {
     <div className="App">
       <h1>TodoList</h1>
       <TodoInputForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} editTodo={editTodo}/>
       <TodoCompletedButton showCompleted={showCompleted}/>
       {completed && <TodoCompletedList hideCompleted={hideCompleted} todos={todos}/>}
     </div>

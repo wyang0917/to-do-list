@@ -2,7 +2,7 @@ import React from 'react'
 import TodoListItem from './TodoListItem/TodoListItem'
 
 function TodoList(props){
-  const {todos,toggleTodo,removeTodo} = props
+  const {todos,toggleTodo,removeTodo,editTodo} = props
   return(
     <ul>
       {todos.map((todo)=>(
@@ -10,7 +10,8 @@ function TodoList(props){
           key={todo.id}
           todo={todo}
           toggleTodo={toggleTodo}
-          removeTodo={removeTodo}/>
+          removeTodo={removeTodo}
+          editTodo={editTodo}/>
       ))}
     </ul>
   )

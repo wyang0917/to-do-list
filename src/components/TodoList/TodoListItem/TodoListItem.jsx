@@ -2,7 +2,7 @@ import React from 'react'
 import './TodoListItem.css'
 
 function TodoListItem(props){
-  const {todo,toggleTodo,removeTodo} = props
+  const {todo,toggleTodo,removeTodo,editTodo} = props
   const todoClass = todo.isCompleted ? 'completed' :'not-completed'
   return(
     <li>
@@ -14,7 +14,7 @@ function TodoListItem(props){
         {todo.text}
       </span>
       <button onClick={()=>removeTodo(todo.id)}>Remove</button>
-      <button>Edit</button>
+      <button onClick={()=>editTodo(todo.id)}>Edit</button>
     </li>
   )
 } 

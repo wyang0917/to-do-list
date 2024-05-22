@@ -1,10 +1,10 @@
 import React,{useState} from "react"
 import {v4 as uuidv4} from 'uuid'
 import './App.css';
-import TodoInputForm from "./components/TodoInputForm/TodoInputForm";
-import TodoList from "./components/TodoList/TodoList";
-import TodoCompletedButton from "./components/TodoCompletedButton/TodoCompletedButton";
-import TodoCompletedList from "./components/TodoCompletedList/TodoCompletedList";
+import TodoInputForm from "./components/TodoInputForm";
+import TodoList from "./components/TodoList";
+import TodoCompletedButton from "./components/TodoCompletedButton";
+import TodoCompletedList from "./components/TodoCompletedList";
 
 
 function App() {

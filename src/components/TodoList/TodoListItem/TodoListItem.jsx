@@ -1,20 +1,25 @@
 import React from 'react'
-import './TodoListItem.css'
+import styles from './TodoListItem.module.css'
 
 function TodoListItem(props){
   const {todo,toggleTodo,removeTodo,editTodo} = props
-  const todoClass = todo.isCompleted ? 'completed' :'not-completed'
+  const todoClass = todo.isCompleted ? styles.completed :styles.notCompleted
   return(
-    <li className='li'>
-      <input 
+    <li className={styles.li}>
+      <label className={styles.checkboxContainer}>
+      <input className={styles.customCheckbox}
       type="checkbox" 
       checked={todo.isCompleted}
       onChange={()=>toggleTodo(todo.id)}/>
-      <span className={todoClass}>
+    <span className={styles.checkmark}></span>
+</label>
+
+      
+      <p className={`${todoClass} ${styles.p}`}>
         {todo.text}
-      </span>
-      <button onClick={()=>removeTodo(todo.id)}>Remove</button>
-      <button onClick={()=>editTodo(todo.id)}>Edit</button>
+      </p>
+      <button className={styles.button} onClick={()=>removeTodo(todo.id)}>Remove</button>
+      <button className={styles.button} onClick={()=>editTodo(todo.id)}>Edit</button>
     </li>
   )
 } 

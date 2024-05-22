@@ -1,11 +1,11 @@
 import React from 'react'
 import TodoListItem from './TodoListItem'
-import './TodoList.css'
+import styles from './TodoList.module.css'
 
 function TodoList(props){
   const {todos,toggleTodo,removeTodo,editTodo} = props
   return(
-    <ul className='ul'>
+    <ul className={styles.ul}>
       {todos.map((todo)=>(
         <TodoListItem 
           key={todo.id}

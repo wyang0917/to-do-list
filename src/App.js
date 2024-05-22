@@ -3,13 +3,14 @@ import {v4 as uuidv4} from 'uuid'
 import './App.css';
 import TodoInputForm from "./components/TodoInputForm";
 import TodoList from "./components/TodoList";
-import TodoCompletedButton from "./components/TodoCompletedButton";
+import TodoFilter from "./components/TodoFilter"
 import TodoCompletedList from "./components/TodoCompletedList";
 
 
 function App() {
   const [todos,setTodos] = useState([])
   const [completed,setCompleted] = useState(false)
+  const [notCompleted,setNotCompleted] =useState(false)
 
   const addTodo=(text)=>{
     const newTodo = {text,id:uuidv4(),isCompleted:false}
@@ -41,14 +42,20 @@ function App() {
   const hideCompleted = ()=>{
     setCompleted(false)
   }
-
+  const showNotCompleted = ()=>{
+    setNotCompleted(true)
+  }
+  const hideNotCompleted = ()=>{
+    setNotCompleted(false)
+  }
   return (
     <div className="App">
       <h1>TodoList</h1>
       <TodoInputForm addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} editTodo={editTodo}/>
-      <TodoCompletedButton showCompleted={showCompleted}/>
+      <TodoFilter showCompleted={showCompleted} showNotCompleted={showNotCompleted}/>
       {completed && <TodoCompletedList hideCompleted={hideCompleted} todos={todos}/>}
+
     </div>
   )
   

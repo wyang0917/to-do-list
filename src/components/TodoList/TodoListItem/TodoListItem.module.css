@@ -7,19 +7,19 @@
   text-decoration: none;
 }
 
-.li{
+.listItem{
   margin: 10px auto;
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.p{
+.listText{
   flex:1;
   text-align: start;
   white-space: normal;
 }
-.button{
+.listButton{
   border: none;
   margin-left: 20px;
   height: 30px;
@@ -28,10 +28,10 @@
   background-color:lightblue;
   transition: all 0.5s ease;
 }
-.button.button:hover{
+.listButton.button:hover{
   cursor: pointer;
 }
-.button:active{
+.listButton:active{
   transform: scale(1.05);
 }
 

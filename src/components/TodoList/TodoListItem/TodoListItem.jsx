@@ -5,7 +5,7 @@ function TodoListItem(props){
   const {todo,toggleTodo,removeTodo,editTodo} = props
   const todoClass = todo.isCompleted ? styles.completed :styles.notCompleted
   return(
-    <li className={styles.li}>
+    <li className={styles.listItem}>
       <label className={styles.checkboxContainer}>
       <input className={styles.customCheckbox}
       type="checkbox" 
@@ -15,11 +15,11 @@ function TodoListItem(props){
 </label>
 
       
-      <p className={`${todoClass} ${styles.p}`}>
+      <p className={`${todoClass} ${styles.listText}`}>
         {todo.text}
       </p>
-      <button className={styles.button} onClick={()=>removeTodo(todo.id)}>Remove</button>
-      <button className={styles.button} onClick={()=>editTodo(todo.id)}>Edit</button>
+      <button className={styles.listButton} onClick={()=>removeTodo(todo.id)}>Remove</button>
+      <button className={styles.listButton} onClick={()=>editTodo(todo.id)}>Edit</button>
     </li>
   )
 } 

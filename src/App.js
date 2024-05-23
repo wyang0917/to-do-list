@@ -20,15 +20,15 @@ function App() {
 
   const toggleTodo=(id)=>{
     const newTodos = todos.map(todo=>todo.id===id ? {...todo,isCompleted:!todo.isCompleted} : todo)
-    setTodos([...newTodos]);
+    setTodos(newTodos);
   }
 
   const removeTodo = (idToRemove) => {
-    const newTodos = [...todos].filter((todo)=>todo.id!==idToRemove)
-    setTodos([...newTodos]);
+    const newTodos = todos.filter((todo)=>todo.id!==idToRemove)
+    setTodos(newTodos);
   };
   const editTodo = (idToEdit)=>{
-    const editTodo = [...todos].find((todo)=>todo.id===idToEdit)
+    const editTodo = todos.find((todo)=>todo.id===idToEdit)
     const editText = prompt('Please edit your todo',editTodo.text)
     if(editText){
       const updateTodo = {...editTodo,text:editText}

@@ -14,7 +14,7 @@ function App() {
   const [notCompleted,setNotCompleted] =useState(false)
 
   const addTodo=(text)=>{
-    const newTodo = {text,id:uuidv4(),isCompleted:false}
+    const newTodo = {id:uuidv4(),text,isCompleted:false}
     setTodos([...todos,newTodo])
   }
 
@@ -51,7 +51,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1 className="h1">TodoList</h1>
+      <h1 className="appHeader">TodoList</h1>
       <TodoInputForm addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} editTodo={editTodo}/>
       <TodoFilter showCompleted={showCompleted} showNotCompleted={showNotCompleted}/>

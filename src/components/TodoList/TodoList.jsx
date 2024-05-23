@@ -1,37 +1,25 @@
-import React from 'react'
-import TodoListItem from './TodoListItem'
-import styles from './TodoList.module.css'
+import React from 'react';
+import TodoListItem from './TodoListItem';
+import styles from './TodoList.module.css';
 
-function TodoList(props){
-  const {todos,toggleTodo,removeTodo,editTodo} = props
-  return(
+function TodoList(props) {
+  const { todos, toggleTodo, removeTodo, editTodo } = props;
+  return (
     <ul className={styles.listContainer}>
-      {todos.map((todo)=>(
-        <TodoListItem 
+      {todos.map((todo) => (
+        <TodoListItem
           key={todo.id}
           todo={todo}
           toggleTodo={toggleTodo}
           removeTodo={removeTodo}
-          editTodo={editTodo}/>
+          editTodo={editTodo}
+        />
       ))}
     </ul>
-  )
+  );
 }
 
-export default TodoList
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default TodoList;
 
 // import React,{useState} from "react"
 // import {v4 as uuidv4} from 'uuid'
@@ -44,8 +32,8 @@ export default TodoList
 //   }
 //   return(
 //         <div>
-//           <input 
-//           type="checkbox" 
+//           <input
+//           type="checkbox"
 //           checked={completed}
 //           onChange={()=>{
 //             setTodos(
@@ -55,7 +43,7 @@ export default TodoList
 //               : currentTodo
 //               )
 //             )
-            
+
 //           }}></input>
 //           <span style={{
 //             textDecoration:completed ? 'line-through' : 'unset'

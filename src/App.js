@@ -60,15 +60,30 @@ function App() {
         removeTodo={removeTodo}
         editTodo={editTodo}
       />
-      <TodoFilterButton onClickHandler={showCompleted} buttonText={`What you have done`}/>
-      <TodoFilterButton onClickHandler={showNotCompleted} buttonText={`You need to do`}/>
+      <TodoFilterButton
+        onClickHandler={showCompleted}
+        buttonText={`What you have done`}
+      />
+      <TodoFilterButton
+        onClickHandler={showNotCompleted}
+        buttonText={`You need to do`}
+      />
       {completed && (
-        <TodoFilterList onClickHandler={hideCompleted} todos={todos} listHeader={`What you have done`} filterCompleted={completed}/>
+        <TodoFilterList
+          onClickHandler={hideCompleted}
+          todos={todos}
+          listHeader={`What you have done`}
+          filterCompleted={completed}
+        />
       )}
       {notCompleted && (
-        <TodoFilterList onClickHandler={hideNotCompleted} todos={todos} listHeader={`You need to do`} filterCompleted={!notCompleted}/>
+        <TodoFilterList
+          onClickHandler={hideNotCompleted}
+          todos={todos}
+          listHeader={`You need to do`}
+          filterCompleted={!notCompleted}
+        />
       )}
-
     </div>
   );
 }

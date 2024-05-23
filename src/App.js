@@ -3,9 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import TodoInputForm from './components/TodoInputForm';
 import TodoList from './components/TodoList';
-import TodoFilter from './components/TodoFilter';
-import TodoCompletedList from './components/TodoCompletedList';
-import TodoNotCompletedList from './components/TodoNotCompletedList';
+import TodoFilterButton from './components/TodoFilterButton';
+import TodoFilterList from './components/TodoFilterList';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -42,11 +41,11 @@ function App() {
   const showCompleted = () => {
     setCompleted(true);
   };
-  const hideCompleted = () => {
-    setCompleted(false);
-  };
   const showNotCompleted = () => {
     setNotCompleted(true);
+  };
+  const hideCompleted = () => {
+    setCompleted(false);
   };
   const hideNotCompleted = () => {
     setNotCompleted(false);
@@ -61,19 +60,15 @@ function App() {
         removeTodo={removeTodo}
         editTodo={editTodo}
       />
-      <TodoFilter
-        showCompleted={showCompleted}
-        showNotCompleted={showNotCompleted}
-      />
+      <TodoFilterButton onClickHandler={showCompleted} buttonText={`What you have done`}/>
+      <TodoFilterButton onClickHandler={showNotCompleted} buttonText={`You need to do`}/>
       {completed && (
-        <TodoCompletedList hideCompleted={hideCompleted} todos={todos} />
+        <TodoFilterList onClickHandler={hideCompleted} todos={todos} listHeader={`What you have done`} filterCompleted={completed}/>
       )}
       {notCompleted && (
-        <TodoNotCompletedList
-          hideNotCompleted={hideNotCompleted}
-          todos={todos}
-        />
+        <TodoFilterList onClickHandler={hideNotCompleted} todos={todos} listHeader={`You need to do`} filterCompleted={!notCompleted}/>
       )}
+
     </div>
   );
 }

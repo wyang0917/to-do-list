@@ -5,7 +5,7 @@ import styles from './TodoList.module.css'
 function TodoList(props){
   const {todos,toggleTodo,removeTodo,editTodo} = props
   return(
-    <ul className={styles.ul}>
+    <ul className={styles.listContainer}>
       {todos.map((todo)=>(
         <TodoListItem 
           key={todo.id}
